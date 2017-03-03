@@ -11,7 +11,7 @@ import UIKit
 class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
     
     var movies = [CDMMovie]()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getMoviesWith(term: "Superman")
@@ -21,7 +21,6 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
         return movies.count
     }
     
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell else { return MovieTableViewCell() }
         let movie = movies[indexPath.row]
@@ -29,7 +28,7 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
         
         return cell
     }
-
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchTerm = searchBar.text else { return }
         getMoviesWith(term: searchTerm)
@@ -45,7 +44,4 @@ class MovieListTableViewController: UITableViewController, UISearchBarDelegate {
             self.movies = movies
         }
     }
-    
-    
-    
 }

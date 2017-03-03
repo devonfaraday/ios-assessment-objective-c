@@ -43,7 +43,7 @@ static NSString * const baseImageURLString = @"http://image.tmdb.org/t/p/w500";
             }
         }
         completion(moviesArray);
-     }]resume];
+    }]resume];
 }
 
 + (void)fetchMovieImageWithPath:(NSString *)path completion:(void (^)(UIImage *))completion
@@ -52,7 +52,7 @@ static NSString * const baseImageURLString = @"http://image.tmdb.org/t/p/w500";
     NSURL *imageEndpoint = [imageURL URLByAppendingPathComponent:path];
     
     [[[NSURLSession sharedSession]dataTaskWithURL:imageEndpoint completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-       
+        
         if (error) { NSLog(@"Error finding image: %@", error); completion(nil); }
         
         if (!data) { NSLog(@"Error in retriveing image data"); completion(nil); }

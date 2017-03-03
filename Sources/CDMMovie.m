@@ -34,17 +34,17 @@
 
 - (instancetype)initWithDictionary:(NSDictionary<NSString *,id> *)dictionary
 {
-        NSString *title = dictionary[@"title"];
-        NSString *overview  = dictionary[@"overview"];
-        double rating = [dictionary[@"vote_average"] doubleValue];
-        NSString *posterURLString = dictionary[@"poster_path"];
+    NSString *title = dictionary[@"title"];
+    NSString *overview  = dictionary[@"overview"];
+    double rating = [dictionary[@"vote_average"] doubleValue];
+    NSString *posterURLString = dictionary[@"poster_path"];
     
     
-        if (![title isKindOfClass:[NSString class]] || ![overview isKindOfClass:[NSString class]] || ![posterURLString isKindOfClass:[NSString class]]) {
-            return nil;
-        }
+    if (![title isKindOfClass:[NSString class]] || ![overview isKindOfClass:[NSString class]] || ![posterURLString isKindOfClass:[NSString class]]) {
+        return nil;
+    }
     
-        return [self initWithTitle:title overview:overview rating:rating posterURLString:posterURLString];
+    return [self initWithTitle:title overview:overview rating:rating posterURLString:posterURLString];
 }
 
 @end
